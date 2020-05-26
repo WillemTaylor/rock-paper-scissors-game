@@ -5,5 +5,46 @@ body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 600;
   margin: 0;
-  color: hsl(229, 25%, 31%);
+  height: 100%;
+  width: 100%;
+  color: white;
+  opacity: 0.95;
+  background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 7px;
+  padding: 10px;
+  margin: 35px auto;
+  width: 75%;
+
+  h2 {
+    margin: 0;
+    line-height: 18px;
+    margin: 10px;
+  }
+
+  .scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 5px 25px;
+    border-radius: 7px;
+    line-height: 26px;
+
+    h5,
+    h1 {
+      margin: 0;
+      color: hsl(237, 49%, 15%);
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+  }
 }

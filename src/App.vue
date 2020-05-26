@@ -1,16 +1,20 @@
 <template>
   <div>
-    <Home />
+    <Header />
   </div>
 </template>
 
 <script>
-import Home from "./components/home.vue";
+import Header from "./components/header.vue";
 
 export default {
   name: "App",
   components: {
-    Home
+    Header
   }
 };
 </script>
+
+<style lang="scss">
+@import "./assets/styles.scss";
+</style>
