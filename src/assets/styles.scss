@@ -1,4 +1,5 @@
 @import './scss_variables.scss';
+@import url('https://use.fontawesome.com/releases/v5.13.0/css/all.css');
 
 html,
 body {
@@ -8,7 +9,6 @@ body {
   height: 100%;
   width: 100%;
   color: white;
-  opacity: 0.95;
   background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
 
@@ -21,6 +21,8 @@ body {
   padding: 10px;
   margin: 35px auto;
   width: 75%;
+  max-width: 900px;
+  margin-bottom: 130px;
 
   h2 {
     margin: 0;
@@ -32,7 +34,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: white;
+    background: #e9ecf2;
     padding: 5px 25px;
     border-radius: 7px;
     line-height: 26px;
@@ -45,6 +47,182 @@ body {
 
     h1 {
       font-size: 2.5em;
+    }
+  }
+
+  @media only screen and (min-width: $desktop) {
+    border-radius: 15px;
+    margin: 50px auto;
+    padding: 20px;
+    margin-bottom: 170px;
+
+    h2 {
+      font-size: 3em;
+      line-height: 38px;
+    }
+
+    .scoreboard {
+      line-height: 48px;
+      padding: 5px 50px;
+
+      h5 {
+        font-size: 1.4em;
+      }
+      h1 {
+        font-size: 5em;
+      }
+    }
+  }
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+
+  .triangle-img {
+    width: 280px;
+  }
+
+  .paper-circle,
+  .scissors-circle,
+  .rock-circle {
+    position: absolute;
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    box-shadow: inset 0px -6px 0px 0px #4a4a4a7a;
+    cursor: pointer;
+
+    &.rules {
+      background: #adafb4;
+
+      img {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .paper-circle,
+  .scissors-circle {
+    img {
+      margin: 26px;
+    }
+  }
+
+  .paper-circle {
+    margin: -97px;
+    background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  }
+
+  .scissors-circle {
+    margin: -97px 97px;
+    background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  }
+
+  .rock-circle {
+    margin: 60px 0;
+    background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+
+    img {
+      margin: 30px;
+    }
+  }
+
+  .circle {
+    display: inline-block;
+    height: 110px;
+    width: 110px;
+    margin: 15px;
+    border-radius: 50%;
+    background: #e9ecf2;
+    box-shadow: inset 0px 5px 3px 0px #5e5c5c6e;
+  }
+
+  @media only screen and (min-width: $desktop) {
+    .triangle-img {
+      width: 400px;
+    }
+
+    .paper-circle,
+    .scissors-circle,
+    .rock-circle {
+      height: 200px;
+      width: 200px;
+    }
+
+    .paper-circle,
+    .scissors-circle,
+    .rock-circle {
+      img {
+        height: 80px;
+        margin: 40px;
+      }
+    }
+
+    .paper-circle {
+      margin: -160px;
+    }
+
+    .scissors-circle {
+      margin: -160px 160px;
+    }
+
+    .rock-circle {
+      margin: 80px 0;
+    }
+
+    .circle {
+      height: 160px;
+      width: 160px;
+      margin: 20px;
+    }
+  }
+}
+
+.rule-btn {
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 10px 45px;
+  margin-top: 70px;
+  cursor: pointer;
+
+  h3 {
+    margin: 0;
+    font-weight: 100;
+    letter-spacing: 0.08em;
+  }
+}
+
+.rules-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin-top: 90px;
+    color: hsl(229, 25%, 31%);
+  }
+
+  a {
+    margin-bottom: 40px;
+
+    &::after {
+      content: '\f00d';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #5e5c5c6e;
+      font-size: 36px;
+      cursor: pointer;
     }
   }
 }
