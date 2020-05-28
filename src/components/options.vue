@@ -4,19 +4,19 @@
       <img class="triangle-img" :src="triangleImg" />
     </div>
 
-    <span :class="!rules ? 'paper-circle' : 'paper-circle rules'">
+    <span :class="['paper-circle', rules ? 'rules' : '']" @click="handleHandChosen('paper')">
       <span class="circle">
         <img :src="paperImg" />
       </span>
     </span>
 
-    <span :class="!rules ? 'scissors-circle' : 'scissors-circle rules'">
+    <span :class="['scissors-circle', rules ? 'rules' : '']" @click="handleHandChosen('scissors')">
       <span class="circle">
         <img :src="scissorsImg" />
       </span>
     </span>
 
-    <span :class="!rules ? 'rock-circle' : 'rock-circle rules'">
+    <span :class="['rock-circle', rules ? 'rules' : '']" @click="handleHandChosen('rock')">
       <span class="circle">
         <img :src="rockImg" />
       </span>
@@ -36,6 +36,13 @@ export default {
       scissorsImg: require("../images/icon-scissors.svg"),
       rockImg: require("../images/icon-rock.svg")
     };
+  },
+  methods: {
+    handleHandChosen(name) {
+      if (event) {
+        this.$emit("clicked", name);
+      }
+    }
   }
 };
 </script>

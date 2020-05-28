@@ -7,7 +7,7 @@
         <br />SCISSORS
       </h2>
     </div>
-    <div class="scoreboard">
+    <div :class="['scoreboard', showRules ? 'rules' : '']">
       <h5>SCORE</h5>
       <h1>{{ score }}</h1>
     </div>
@@ -16,6 +16,9 @@
 
 <script>
 export default {
+  props: {
+    showRules: Boolean
+  },
   data() {
     return {
       score: 12

@@ -12,6 +12,16 @@ body {
   background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
 
+.body {
+  &.rules {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #09091a;
+    color: grey;
+  }
+}
+
 .header-container {
   display: flex;
   flex-direction: row;
@@ -22,7 +32,7 @@ body {
   margin: 35px auto;
   width: 75%;
   max-width: 900px;
-  margin-bottom: 130px;
+  margin-bottom: 100px;
 
   h2 {
     margin: 0;
@@ -38,6 +48,10 @@ body {
     padding: 5px 25px;
     border-radius: 7px;
     line-height: 26px;
+
+    &.rules {
+      background: grey;
+    }
 
     h5,
     h1 {
@@ -75,6 +89,181 @@ body {
   }
 }
 
+.paper-circle,
+.scissors-circle,
+.rock-circle {
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  box-shadow: inset 0px -6px 0px 0px #4a4a4a7a;
+  cursor: pointer;
+
+  &.rules {
+    background: #adafb4;
+    cursor: unset;
+
+    img {
+      opacity: 0.5;
+    }
+  }
+}
+
+.paper-circle,
+.scissors-circle {
+  img {
+    margin: 26px;
+  }
+}
+
+.paper-circle {
+  background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+
+  &.rules {
+    &::before {
+      content: 'BEATS';
+      font-size: 1em;
+      color: #5e5c5c6e;
+      position: absolute;
+      margin: 23px 0 0 146px;
+    }
+    &::after {
+      content: '\f30a';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #5e5c5c6e;
+      position: absolute;
+      font-size: 38px;
+      margin: 40px 0 0 9px;
+    }
+  }
+
+  @media only screen and (min-width: $desktop) {
+    &.rules {
+      &::before {
+        font-size: 1.6em;
+        margin: 45px 0 0 224px;
+      }
+      &::after {
+        font-size: 84px;
+        margin: 53px 0 0 20px;
+      }
+    }
+  }
+}
+
+.scissors-circle {
+  background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+
+  &.rules {
+    &::before {
+      content: '\f30b';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #5e5c5c6e;
+      font-size: 38px;
+      position: absolute;
+      margin: 130px 0px 0px 10px;
+      transform: rotateZ(-51deg);
+    }
+    &::after {
+      content: 'BEATS';
+      font-size: 1em;
+      color: #5e5c5c6e;
+      position: absolute;
+      margin: 148px 0px 0px -98px;
+    }
+  }
+
+  @media only screen and (min-width: $desktop) {
+    &.rules {
+      &::before {
+        font-size: 84px;
+        margin: 179px 0 0 -8px;
+      }
+      &::after {
+        font-size: 1.6em;
+        margin: 217px 0 0 -137px;
+      }
+    }
+  }
+}
+
+.rock-circle {
+  background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+
+  &.rules {
+    &::before {
+      content: '\f30b';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #5e5c5c6e;
+      font-size: 38px;
+      position: absolute;
+      margin-top: -26px;
+      transform: rotateZ(51deg);
+    }
+    &::after {
+      content: 'BEATS';
+      font-size: 1em;
+      color: #5e5c5c6e;
+      position: absolute;
+      margin: -10px 0px 0px -174px;
+    }
+  }
+
+  img {
+    margin: 30px;
+  }
+
+  @media only screen and (min-width: $desktop) {
+    &.rules {
+      &::before {
+        font-size: 84px;
+        margin: -60px 0 0 -30px;
+      }
+      &::after {
+        font-size: 1.6em;
+        margin: -22px 0 0 -280px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  .paper-circle,
+  .scissors-circle,
+  .rock-circle {
+    height: 200px;
+    width: 200px;
+  }
+
+  .paper-circle,
+  .scissors-circle,
+  .rock-circle {
+    img {
+      height: 80px;
+      margin: 40px;
+    }
+  }
+}
+
+.circle {
+  display: inline-block;
+  height: 110px;
+  width: 110px;
+  margin: 15px;
+  border-radius: 50%;
+  background: #e9ecf2;
+  box-shadow: inset 0px 5px 3px 0px #5e5c5cb0;
+
+  @media only screen and (min-width: $desktop) {
+    height: 160px;
+    width: 160px;
+    margin: 20px;
+  }
+}
+
 .options-container {
   display: flex;
   flex-direction: column;
@@ -86,80 +275,21 @@ body {
     width: 280px;
   }
 
-  .paper-circle,
-  .scissors-circle,
-  .rock-circle {
-    position: absolute;
-    height: 140px;
-    width: 140px;
-    border-radius: 50%;
-    box-shadow: inset 0px -6px 0px 0px #4a4a4a7a;
-    cursor: pointer;
-
-    &.rules {
-      background: #adafb4;
-
-      img {
-        opacity: 0.5;
-      }
-    }
-  }
-
-  .paper-circle,
-  .scissors-circle {
-    img {
-      margin: 26px;
-    }
-  }
-
   .paper-circle {
     margin: -97px;
-    background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
   }
 
   .scissors-circle {
     margin: -97px 97px;
-    background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
   }
 
   .rock-circle {
     margin: 60px 0;
-    background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-
-    img {
-      margin: 30px;
-    }
-  }
-
-  .circle {
-    display: inline-block;
-    height: 110px;
-    width: 110px;
-    margin: 15px;
-    border-radius: 50%;
-    background: #e9ecf2;
-    box-shadow: inset 0px 5px 3px 0px #5e5c5c6e;
   }
 
   @media only screen and (min-width: $desktop) {
     .triangle-img {
       width: 400px;
-    }
-
-    .paper-circle,
-    .scissors-circle,
-    .rock-circle {
-      height: 200px;
-      width: 200px;
-    }
-
-    .paper-circle,
-    .scissors-circle,
-    .rock-circle {
-      img {
-        height: 80px;
-        margin: 40px;
-      }
     }
 
     .paper-circle {
@@ -173,12 +303,6 @@ body {
     .rock-circle {
       margin: 80px 0;
     }
-
-    .circle {
-      height: 160px;
-      width: 160px;
-      margin: 20px;
-    }
   }
 }
 
@@ -188,7 +312,7 @@ body {
   margin: 0 auto;
   width: fit-content;
   padding: 10px 45px;
-  margin-top: 70px;
+  margin-top: 100px;
   cursor: pointer;
 
   h3 {
@@ -202,6 +326,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
+  top: 0;
   background: white;
   display: flex;
   flex-direction: column;
@@ -223,6 +348,77 @@ body {
       color: #5e5c5c6e;
       font-size: 36px;
       cursor: pointer;
+    }
+  }
+
+  @media only screen and (min-width: $desktop) {
+    position: fixed;
+    height: 60%;
+    width: 45%;
+    top: 22%;
+    left: 27%;
+    border-radius: 15px;
+
+    h1 {
+      margin: 20px 0 100px 50px;
+      font-size: 2.5em;
+      align-self: flex-start;
+    }
+
+    a {
+      align-self: flex-end;
+
+      &::after {
+        font-size: 50px;
+        position: absolute;
+        top: 16px;
+        right: 50px;
+      }
+    }
+  }
+}
+
+.hand-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 800px;
+  height: 240px;
+
+  div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  h3 {
+    margin-top: 150px;
+    font-weight: 200;
+  }
+
+  .empty-circle {
+    position: absolute;
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+
+    @media only screen and (min-width: $desktop) {
+      height: 200px;
+      width: 200px;
+    }
+  }
+
+  .circle {
+    &.empty {
+      background: hsl(237, 49%, 15%);
+      box-shadow: none;
+    }
+  }
+
+  @media only screen and (min-width: $desktop) {
+    h3 {
+      margin-top: 230px;
     }
   }
 }
