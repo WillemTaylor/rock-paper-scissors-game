@@ -118,115 +118,17 @@ body {
 
 .paper-circle {
   background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-
-  &.rules {
-    &::before {
-      content: 'BEATS';
-      font-size: 1em;
-      color: #5e5c5c6e;
-      position: absolute;
-      margin: 23px 0 0 146px;
-    }
-    &::after {
-      content: '\f30a';
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      color: #5e5c5c6e;
-      position: absolute;
-      font-size: 38px;
-      margin: 40px 0 0 9px;
-    }
-  }
-
-  @media only screen and (min-width: $desktop) {
-    &.rules {
-      &::before {
-        font-size: 1.6em;
-        margin: 45px 0 0 224px;
-      }
-      &::after {
-        font-size: 84px;
-        margin: 53px 0 0 20px;
-      }
-    }
-  }
 }
 
 .scissors-circle {
   background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-
-  &.rules {
-    &::before {
-      content: '\f30b';
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      color: #5e5c5c6e;
-      font-size: 38px;
-      position: absolute;
-      margin: 130px 0px 0px 10px;
-      transform: rotateZ(-51deg);
-    }
-    &::after {
-      content: 'BEATS';
-      font-size: 1em;
-      color: #5e5c5c6e;
-      position: absolute;
-      margin: 148px 0px 0px -98px;
-    }
-  }
-
-  @media only screen and (min-width: $desktop) {
-    &.rules {
-      &::before {
-        font-size: 84px;
-        margin: 179px 0 0 -8px;
-      }
-      &::after {
-        font-size: 1.6em;
-        margin: 217px 0 0 -137px;
-      }
-    }
-  }
 }
 
 .rock-circle {
   background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
 
-  &.rules {
-    &::before {
-      content: '\f30b';
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      color: #5e5c5c6e;
-      font-size: 38px;
-      position: absolute;
-      margin-top: -26px;
-      transform: rotateZ(51deg);
-    }
-    &::after {
-      content: 'BEATS';
-      font-size: 1em;
-      color: #5e5c5c6e;
-      position: absolute;
-      margin: -10px 0px 0px -174px;
-    }
-  }
-
   img {
     margin: 30px;
-  }
-
-  @media only screen and (min-width: $desktop) {
-    &.rules {
-      &::before {
-        font-size: 84px;
-        margin: -60px 0 0 -30px;
-      }
-      &::after {
-        font-size: 1.6em;
-        margin: -22px 0 0 -280px;
-      }
-    }
   }
 }
 
@@ -292,6 +194,58 @@ body {
     margin: 60px 0;
   }
 
+  .paper-arrow,
+  .scissors-arrow,
+  .rock-arrow {
+    position: relative;
+
+    p {
+      font-size: 1em;
+      color: #5e5c5c6e;
+      margin: 0;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      p {
+        font-size: 1.6em;
+      }
+    }
+  }
+
+  .paper-arrow {
+    bottom: 36px;
+  }
+
+  .scissors-arrow {
+    right: 56px;
+    bottom: 21px;
+
+    p {
+      position: relative;
+      top: 42px;
+      right: 38px;
+    }
+
+    img {
+      transform: rotate(-130deg);
+    }
+  }
+
+  .rock-arrow {
+    left: 58px;
+    bottom: 92px;
+
+    p {
+      position: relative;
+      top: 42px;
+      left: 38px;
+    }
+
+    img {
+      transform: rotate(130deg);
+    }
+  }
+
   @media only screen and (min-width: $desktop) {
     .triangle-img {
       width: 400px;
@@ -307,6 +261,30 @@ body {
 
     .rock-circle {
       margin: 80px 0;
+    }
+
+    .paper-arrow {
+      bottom: 58px;
+    }
+
+    .scissors-arrow {
+      right: 94px;
+      bottom: 46px;
+
+      p {
+        top: 66px;
+        right: 60px;
+      }
+    }
+
+    .rock-arrow {
+      left: 94px;
+      bottom: 155px;
+
+      p {
+        top: 66px;
+        left: 60px;
+      }
     }
   }
 }

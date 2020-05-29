@@ -23,7 +23,7 @@
     </div>
     <div v-if="result.length > 0" class="result-container">
       <h1>{{ result }}</h1>
-      <a @click="handleGameReset">PLAY AGAIN</a>
+      <a @click="handleGameRestart">PLAY AGAIN</a>
     </div>
   </div>
 </template>
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       houseHand: "",
-      choices: ["paper", "scissors", "rock"],
+      choices: ["rock", "paper", "scissors"],
       result: ""
     };
   },
@@ -50,34 +50,22 @@ export default {
       return Math.floor(Math.random() * Math.floor(max));
     },
     handleResult() {
-      if (this.hand === "paper") {
-        if (this.houseHand === "paper") {
-          this.result = "YOU TIED";
-        } else if (this.houseHand === "scissors") {
-          this.result = "YOU LOSE";
-        } else if (this.houseHand === "rock") {
-          this.result = "YOU WIN";
-        }
-      } else if (this.hand === "scissors") {
-        if (this.houseHand === "paper") {
-          this.result = "YOU WIN";
-        } else if (this.houseHand === "scissors") {
-          this.result = "YOU TIED";
-        } else if (this.houseHand === "rock") {
-          this.result = "YOU LOSE";
-        }
-      } else if (this.hand === "rock") {
-        if (this.houseHand === "paper") {
-          this.result = "YOU LOSE";
-        } else if (this.houseHand === "scissors") {
-          this.result = "YOU WIN";
-        } else if (this.houseHand === "rock") {
-          this.result = "YOU TIED";
-        }
-      }
+      let userChoice = this.choices.indexOf(this.hand);
+      let pcChoice = this.choices.indexOf(this.houseHand);
+
+      userChoice === pcChoice
+        ? (this.result = "YOU TIED")
+        : pcChoice === this.choices.length - 1 && userChoice === 0
+        ? (this.result = "YOU WIN")
+        : userChoice === this.choices.length - 1 && pcChoice === 0
+        ? (this.result = "YOU LOSE")
+        : userChoice > pcChoice
+        ? (this.result = "YOU WIN")
+        : (this.result = "YOU LOSE");
+
       this.$emit("result", this.result);
     },
-    handleGameReset() {
+    handleGameRestart() {
       this.houseHand = "";
       this.result = "";
       this.$emit("clicked", true);

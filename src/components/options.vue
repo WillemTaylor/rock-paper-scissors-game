@@ -9,18 +9,30 @@
         <img :src="paperImg" />
       </span>
     </span>
+    <div v-if="rules" class="paper-arrow">
+      <p>BEATS</p>
+      <img :src="arrowIcon" />
+    </div>
 
     <span :class="['scissors-circle', rules ? 'rules' : '']" @click="handleHandChosen('scissors')">
       <span class="circle">
         <img :src="scissorsImg" />
       </span>
     </span>
+    <div v-if="rules" class="scissors-arrow">
+      <p>BEATS</p>
+      <img :src="arrowIcon" />
+    </div>
 
     <span :class="['rock-circle', rules ? 'rules' : '']" @click="handleHandChosen('rock')">
       <span class="circle">
         <img :src="rockImg" />
       </span>
     </span>
+    <div v-if="rules" class="rock-arrow">
+      <p>BEATS</p>
+      <img :src="arrowIcon" />
+    </div>
   </div>
 </template>
 
@@ -34,7 +46,8 @@ export default {
       triangleImg: require("../images/bg-triangle.svg"),
       paperImg: require("../images/icon-paper.svg"),
       scissorsImg: require("../images/icon-scissors.svg"),
-      rockImg: require("../images/icon-rock.svg")
+      rockImg: require("../images/icon-rock.svg"),
+      arrowIcon: require("../images/long-arrow-alt-left-solid.svg")
     };
   },
   methods: {
