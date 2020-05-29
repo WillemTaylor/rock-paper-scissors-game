@@ -32,7 +32,7 @@ body {
   margin: 35px auto;
   width: 75%;
   max-width: 900px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 
   h2 {
     margin: 0;
@@ -68,7 +68,7 @@ body {
     border-radius: 15px;
     margin: 50px auto;
     padding: 20px;
-    margin-bottom: 170px;
+    margin-bottom: 120px;
 
     h2 {
       font-size: 3em;
@@ -257,6 +257,11 @@ body {
   background: #e9ecf2;
   box-shadow: inset 0px 5px 3px 0px #5e5c5cb0;
 
+  &.empty {
+    background: hsl(237, 49%, 15%);
+    box-shadow: none;
+  }
+
   @media only screen and (min-width: $desktop) {
     height: 160px;
     width: 160px;
@@ -312,7 +317,7 @@ body {
   margin: 0 auto;
   width: fit-content;
   padding: 10px 45px;
-  margin-top: 100px;
+  margin-top: 50px;
   cursor: pointer;
 
   h3 {
@@ -383,8 +388,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   margin: 0 auto;
-  max-width: 800px;
-  height: 240px;
+  max-width: 1000px;
 
   div {
     width: 50%;
@@ -409,16 +413,30 @@ body {
     }
   }
 
-  .circle {
-    &.empty {
-      background: hsl(237, 49%, 15%);
-      box-shadow: none;
-    }
-  }
-
   @media only screen and (min-width: $desktop) {
     h3 {
       margin-top: 230px;
     }
+  }
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 3.6em;
+    margin: 0;
+  }
+
+  a {
+    background: white;
+    color: hsl(229, 25%, 31%);
+    letter-spacing: 0.1em;
+    border-radius: 7px;
+    padding: 13px 55px;
+    margin-top: 10px;
+    cursor: pointer;
   }
 }

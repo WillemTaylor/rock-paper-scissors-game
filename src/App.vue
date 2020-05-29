@@ -1,11 +1,11 @@
 <template>
   <div :class="['body', showRules ? 'rules' : '']">
-    <Header :showRules="showRules" />
+    <Header :showRules="showRules" :score="score" />
     <div v-if="hand.length === 0">
-      <Options @clicked="handlehandChosen" />
+      <Options @clicked="handleHandChosen" />
     </div>
     <div v-else>
-      <chosen-hand :hand="hand" />
+      <chosen-hand :hand="hand" @clicked="handleGameRestart" @result="handleScore" />
     </div>
     <div class="rule-btn">
       <h3 @click="handleClick">RULES</h3>
@@ -33,7 +33,8 @@ export default {
   data() {
     return {
       showRules: false,
-      hand: ""
+      hand: "",
+      score: 0
     };
   },
   methods: {
@@ -45,8 +46,20 @@ export default {
     handleRulesClosed() {
       this.showRules = !this.showRules;
     },
-    handlehandChosen(value) {
+    handleHandChosen(value) {
       this.hand = value;
+    },
+    handleGameRestart(value) {
+      if (value === true) {
+        this.hand = "";
+      }
+    },
+    handleScore(value) {
+      if (value === "YOU WIN") {
+        this.score += 1;
+      } else if (value === "YOU LOSE") {
+        this.score -= 1;
+      }
     }
   }
 };

@@ -17,12 +17,8 @@
 <script>
 export default {
   props: {
-    showRules: Boolean
-  },
-  data() {
-    return {
-      score: 12
-    };
+    showRules: Boolean,
+    score: Number
   }
 };
 </script>
