@@ -1,29 +1,20 @@
-# rock-paper-scissors-game
+# Rock, Paper, Scissors Game Challenge
 
-## Project setup
-```
-npm install
-```
+This development challenge was taken from frontendmentor here: https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### The Challenge
 
-### Compiles and minifies for production
-```
-npm run build
-```
+The task was to create a website as close to the design as possible, where you can play a game of Rock, Paper, Sissors against the computer.
 
-### Run your tests
-```
-npm run test
-```
+### What it does
 
-### Lints and fixes files
-```
-npm run lint
-```
+Your users should be able to:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- View the optimal layout for the game depending on their device's screen size
+- View the rules of Rock, Paper, Scissors
+- Play Rock, Paper, Scissors against the computer
+- Maintain the state of the score after refreshing the browser
+
+# Hosted Site
+
+Project was written using Vue.js framework, inlcuding icons taken from https://fontawesome.com/. Project was deployed to Netlify here: https://rock-paper-scissorss-game.netlify.app/

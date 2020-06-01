@@ -34,7 +34,7 @@ export default {
     return {
       showRules: false,
       hand: "",
-      score: 0
+      score: Number(localStorage.getItem("score"))
     };
   },
   methods: {
@@ -60,6 +60,7 @@ export default {
       } else if (value === "YOU LOSE") {
         this.score -= 1;
       }
+      localStorage.setItem("score", this.score);
     }
   }
 };

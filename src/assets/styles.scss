@@ -107,6 +107,16 @@ body {
       opacity: 0.5;
     }
   }
+
+  @media only screen and (min-width: $desktop) {
+    height: 200px;
+    width: 200px;
+
+    img {
+      height: 80px;
+      margin: 40px !important;
+    }
+  }
 }
 
 .paper-circle,
@@ -129,24 +139,6 @@ body {
 
   img {
     margin: 30px;
-  }
-}
-
-@media only screen and (min-width: $desktop) {
-  .paper-circle,
-  .scissors-circle,
-  .rock-circle {
-    height: 200px;
-    width: 200px;
-  }
-
-  .paper-circle,
-  .scissors-circle,
-  .rock-circle {
-    img {
-      height: 80px;
-      margin: 40px;
-    }
   }
 }
 
@@ -336,9 +328,9 @@ body {
 
   @media only screen and (min-width: $desktop) {
     position: fixed;
-    height: 60%;
+    height: 70%;
     width: 45%;
-    top: 22%;
+    top: 16%;
     left: 27%;
     border-radius: 15px;
 
@@ -384,16 +376,16 @@ body {
     height: 140px;
     width: 140px;
     border-radius: 50%;
-
-    @media only screen and (min-width: $desktop) {
-      height: 200px;
-      width: 200px;
-    }
   }
 
   @media only screen and (min-width: $desktop) {
     h3 {
       margin-top: 230px;
+    }
+
+    .empty-circle {
+      height: 200px;
+      width: 200px;
     }
   }
 }
